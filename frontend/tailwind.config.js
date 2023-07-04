@@ -18,7 +18,8 @@ module.exports = {
     fontSize: {
       '1818': ['18px', '18px'],
       '1621': ['16px','21px'],
-      '1852': ['18px','52px']
+      '1852': ['18px','52px'],
+      '1419': ['14px','19px'],
     },
     borderWidth: {
       DEFAULT: '1px',

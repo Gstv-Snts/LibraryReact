@@ -1,4 +1,3 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ReactComponent as Logo } from "../images/Logo.svg";
 import { ReactComponent as User } from "../images/User.svg";
 import { ReactComponent as Arrow } from "../images/Arrow.svg";
