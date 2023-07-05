@@ -12,7 +12,10 @@ function Login() {
         <Logo />
         <Input placeholder="E-mail" Icon={Email} />
         <Input placeholder="Senha" Icon={Lock} />
-        <a className="text-1419 text-black font-bold underline font-roboto text-left w-full">
+        <a
+          href="localhost:3000/"
+          className="text-1419 text-black font-bold underline font-roboto text-left w-full"
+        >
           Esqueci minha senha
         </a>
         <button className="w-full rounded bg-first text-1621 font-bold text-center py-3">
