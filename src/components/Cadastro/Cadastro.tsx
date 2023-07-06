@@ -1,8 +1,9 @@
-import Back from "../Back";
-import Header from "../Header";
-import Main from "../Main";
-import { ReactComponent as CirclePlus } from "../../images/CirclePlus.svg";
-import Input from "./Input";
+import React from 'react';
+import Back from '../Back';
+import Header from '../Header';
+import Main from '../Main';
+import { ReactComponent as CirclePlus } from '../../images/CirclePlus.svg';
+import Input from './Input';
 
 function Cadastro() {
   return (

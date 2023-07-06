@@ -1,16 +1,10 @@
-import { ReactComponent as Logo } from "../images/Logo.svg";
-import { ReactComponent as User } from "../images/User.svg";
-import { ReactComponent as Arrow } from "../images/Arrow.svg";
-import { useState } from "react";
+import React, { useState } from 'react';
+import { ReactComponent as Logo } from '../images/Logo.svg';
+import { ReactComponent as User } from '../images/User.svg';
+import { ReactComponent as Arrow } from '../images/Arrow.svg';
+
 function Header() {
-  const [sair, setSair] = useState(false);
-  const sairVisibilit = (sairState: boolean) => {
-    if (sairState === true) {
-      return "visible";
-    } else {
-      return "invisible";
-    }
-  };
+  const [sair, setSair] = useState('invisible');
   return (
     <header className="flex row justify-between p-7 bg-white flex-wrap items-center">
       <Logo className="w-32 h-12" />
@@ -21,20 +15,18 @@ function Header() {
           <p className="text-1852 font-roboto">Usuário</p>
           <Arrow
             onClick={() => {
-              if (sair === true) {
-                setSair(false);
+              if (sair === 'visible') {
+                setSair('invisible');
               } else {
-                setSair(true);
+                setSair('visible');
               }
             }}
             className="cursor-pointer w-6 h-6"
           />
         </div>
         <button
-          className={
-            "p-4 w-36 bg-second text-left absolute text-1818 font-poppins " +
-            sairVisibilit(sair)
-          }
+          type="button"
+          className={`p-4 w-36 bg-second text-left absolute text-1818 font-poppins ${sair}`}
         >
           Sair
         </button>
