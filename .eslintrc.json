@@ -22,7 +22,5 @@
     "project": "./tsconfig.json"
   },
   "plugins": ["react", "@typescript-eslint", "prettier"],
-  "rules": {
-    "prettier/prettier": "error"
-  }
+  "ignorePatterns": ["tailwind.config.js"]
 }

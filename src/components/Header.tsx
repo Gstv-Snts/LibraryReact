@@ -6,7 +6,7 @@ import { ReactComponent as Arrow } from '../images/Arrow.svg';
 function Header() {
   const [sair, setSair] = useState('invisible');
   return (
-    <header className="flex row justify-between p-7 bg-white flex-wrap items-center">
+    <header className="flex flex-col justify-between p-7 bg-white items-center tablet:flex-row">
       <Logo className="w-32 h-12" />
 
       <section className="relative w-36">

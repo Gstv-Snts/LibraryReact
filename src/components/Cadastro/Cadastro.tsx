@@ -4,22 +4,58 @@ import Header from '../Header';
 import Main from '../Main';
 import { ReactComponent as CirclePlus } from '../../images/CirclePlus.svg';
 import Input from './Input';
+import Textarea from './Textarea';
+import Genero from './Genero';
+import Data from './Data';
 
 function Cadastro() {
   return (
     <>
       <Header />
       <Main>
-        <Back pageName="Home" pageText="Cadastrar novo livro" />
-        <form>
-          <div className="">
-            <CirclePlus />
-            Capa
-          </div>
-          <div className="pt-28">
-            <Input placeholder="Nome" />
-          </div>
-        </form>
+        <Back pageName="Home" pageText="Cadastrar novo livro" to="/" />
+        <div className="w-full flex justify-center">
+          <form className="flex flex-col gap-8 w-11/12 laptop:w-[944px] ">
+            <div className="w-full mt-28 m-0 flex flex-col items-center justify-center gap-12 laptop:flex-row ">
+              <div
+                className={` w-11/12 max-w-[172px] h-52 relative border-dashed border-2 border-first flex flex-row items-center justify-center text-first`}
+              >
+                <input
+                  type="file"
+                  alt="file"
+                  className="absolute left-0 top-0 w-full h-full opacity-0 cursor-pointer"
+                />
+                <CirclePlus className="h-6 fill-first" />
+                Capa
+              </div>
+              <div className="flex flex-col gap-6 w-full max-w-[350px]">
+                <Input placeholder="Título" />
+                <Textarea placeholder="Sinopse" />
+              </div>
+              <div className="flex flex-col gap-6 w-full max-w-[350px]">
+                <Input placeholder="Autor" />
+                <Genero
+                  generos={['Fantasia', 'Ação e Aventura', 'Horror', 'Romance']}
+                />
+                <Data />
+              </div>
+            </div>
+            <div className="flex flex-row flex-wrap justify-center gap-6 laptop:justify-end">
+              <button
+                type="button"
+                className="text-1618 text-black font-roboto font-medium w-11/12 max-w-[143px] border border-[#133052] rounded-md bg-white py-4 px-7"
+              >
+                CANCELAR
+              </button>
+              <button
+                type="button"
+                className="text-1618 text-black font-roboto font-medium w-11/12 max-w-[143px] border border-first rounded-md bg-first py-4 px-7"
+              >
+                SALVAR
+              </button>
+            </div>
+          </form>
+        </div>
       </Main>
     </>
   );
