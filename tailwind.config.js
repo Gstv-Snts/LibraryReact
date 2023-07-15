@@ -20,6 +20,7 @@ module.exports = {
       1419: ['14px', '19px'],
       2020: ['20px', '20px'],
       1618: ['16px', '18px'],
+      2026: ['20px', '26px'],
     },
     borderWidth: {
       DEFAULT: '1px',

@@ -16,7 +16,9 @@ function Home() {
           <Link to="cadastro">
             <Card Icon={Logo} text="Cadastrar novo livro" />
           </Link>
-          <Card Icon={Book} text="Biblioteca" />
+          <Link to="biblioteca">
+            <Card Icon={Book} text="Biblioteca" />
+          </Link>
           <Card Icon={Pending} text="Histórico de empréstimos" />
         </div>
       </Main>
