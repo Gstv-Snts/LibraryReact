@@ -11,6 +11,7 @@ export interface Status {
 }
 
 export interface BookType {
+  id: number;
   tittle: string;
   author: string;
   genre: string;
@@ -23,6 +24,7 @@ export interface BookType {
 
 export const emptyBook = (): BookType => {
   return {
+    id: 0,
     tittle: '',
     author: '',
     genre: '',

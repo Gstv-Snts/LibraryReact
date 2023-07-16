@@ -37,7 +37,7 @@ function Cadastro() {
                 <Genero
                   generos={['Fantasia', 'Ação e Aventura', 'Horror', 'Romance']}
                 />
-                <Data />
+                <Data placeholder="Data de entrada" />
               </div>
             </div>
             <div className="flex flex-row flex-wrap justify-center gap-6 laptop:justify-end">
