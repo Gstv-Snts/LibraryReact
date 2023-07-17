@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import React, { useContext } from 'react';
 import { ReactComponent as Emprestar } from '../../images/Emprestar.svg';
 import { BookType, RentHistory } from '../../Types';
@@ -5,8 +6,7 @@ import { ReactComponent as SairIcon } from '../../images/Sair.svg';
 import { CurrentBookContext } from '../../contexts/CurrentBookContext';
 import { CurrentScreenContext } from '../../contexts/CurrentScreenContext';
 import { ReactComponent as FilterIcon } from '../../images/Filter.svg';
-import Input from '../Cadastro/Input';
-import Data from '../Cadastro/Data';
+import { Input, Data } from '../Cadastro/Components';
 
 export function Sair(props: { onClick: () => void }) {
   const { onClick } = props;
@@ -70,8 +70,11 @@ export function RightButton(props: {
 export function RightButtons() {
   const { currentBook } = useContext(CurrentBookContext);
   const { setCurrentScreen } = useContext(CurrentScreenContext);
+  const navigate = useNavigate();
 
-  const editar = () => {};
+  const editar = () => {
+    navigate('/editar');
+  };
   const historico = () => {
     setCurrentScreen('history');
   };
@@ -129,8 +132,8 @@ export function PopupContainer(props: { children: React.ReactNode }) {
   const { children } = props;
   const { setCurrentScreen } = useContext(CurrentScreenContext);
   return (
-    <div className="bg-[#343a40b7] absolute left-0 top-0 w-full h-full flex justify-center pt-14 z-10 ">
-      <div className="bg-white w-11/12 h-fit p-10 flex flex-col gap-6 tablet:max-w-fit">
+    <div className="bg-[#343a40b7] absolute left-0 top-0 w-full h-full laptop:h-full max-h-fit flex justify-center items-center z-10 box-content ">
+      <div className="bg-white w-11/12 max-w-fit h-fit max-h-full p-10 flex flex-col gap-6 overflow-scroll ">
         <Sair onClick={() => setCurrentScreen(undefined)} />
         {children}
       </div>
@@ -171,7 +174,7 @@ export function BookInfo() {
 
   return (
     <PopupContainer>
-      <div className="flex flex-row flex-wrap justify-center gap-10">
+      <div className="flex flex-col laptop:flex-row justify-center gap-10">
         <div className="flex flex-col justify-between">
           <img
             src={currentBook.image}
@@ -209,12 +212,12 @@ function BookRent() {
       </h1>
       <form className="flex flex-col items-end gap-6">
         <div className="flex flex-row flex-wrap gap-6 laptop:w-[724px] laptop:flex-nowrap">
-          <Input placeholder="Nome do Aluno" />
-          <Input placeholder="Turma" />
+          <Input placeholder="Nome do Aluno" value="" />
+          <Input placeholder="Turma" value="" />
         </div>
         <div className="flex flex-row flex-wrap w-full gap-6 laptop:w-[724px] laptop:flex-nowrap">
-          <Data placeholder="Data da retirada" />
-          <Data placeholder="Data da Entrega" />
+          <Data placeholder="Data da retirada" value="" />
+          <Data placeholder="Data da Entrega" value="" />
         </div>
         <button
           type="button"

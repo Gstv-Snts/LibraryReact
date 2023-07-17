@@ -3,8 +3,6 @@ import Header from '../Header';
 import Main from '../Main';
 import Back from '../Back';
 import { Book, BooksContainer, Popup } from './Components';
-import CurrentBookContextProvider from '../../contexts/CurrentBookContext';
-import CurrentScreenContextProvider from '../../contexts/CurrentScreenContext';
 
 const bookOne = {
   id: 1,
@@ -93,20 +91,17 @@ const bookThree = {
 
 function Biblioteca() {
   return (
-    <div>
+    <div className="h-full">
       <Header />
       <Main>
+        <Popup />
         <Back pageName="Home" pageText="Biblioteca" to="/" />
-        <CurrentBookContextProvider>
-          <CurrentScreenContextProvider>
-            <BooksContainer>
-              <Book book={bookOne} />
-              <Book book={bookTwo} />
-              <Book book={bookThree} />
-              <Popup />
-            </BooksContainer>
-          </CurrentScreenContextProvider>
-        </CurrentBookContextProvider>
+
+        <BooksContainer>
+          <Book book={bookOne} />
+          <Book book={bookTwo} />
+          <Book book={bookThree} />
+        </BooksContainer>
       </Main>
     </div>
   );
