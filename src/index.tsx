@@ -9,6 +9,7 @@ import Biblioteca from './components/Bibliioteca/Biblioteca';
 import CurrentBookContextProvider from './contexts/CurrentBookContext';
 import CurrentScreenContextProvider from './contexts/CurrentScreenContext';
 import Editar from './components/Editar/Editar';
+import Historico from './components/Historico/Historico';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
       { path: '/login', element: <Login /> },
       { path: '/biblioteca', element: <Biblioteca /> },
       { path: '/editar', element: <Editar /> },
+      { path: '/historico', element: <Historico /> },
     ],
   },
 ]);
